@@ -1,0 +1,24 @@
+{{ template "header.html" }}
+
+<div class="container mt-5">
+    {{if .videos}}
+    {{range .videos}}
+
+        <div class="card" style="width: 18rem;">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="responsive-iframe" width="300px;" height="300px;" src="{{.URL}}"></iframe>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ .Title }}</h5>
+                <p class="card-text">{{ .Description }}</p>
+            </div>
+        </div>
+
+    {{end}}
+    {{else}}
+        <div class="alert alert-success">Data Kosong!</div>
+    {{end}}
+
+</div>
+
+{{ template "footer.html" }}
